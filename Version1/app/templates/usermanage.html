@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCS Network team</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/usermanage.css') }}"
+    />
+  </head>
+  <body>
+
+    <div class="top-bar">
+      <ul class="breadcrumb">
+        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="admin">Admin Dashboard</a></li>
+        <li>User Management</li>
+      </ul>
+      <a href="{{ url_for('logout') }}"><button class="top-right-button">Log Out</button></a>
+    </div>
+    
+    <div class="wrapper">
+      <form action="#">
+        <h1 class="dash_head">User Management </h1>
+        <p class="loginP">Please select action you need to perform</p>
+
+        <main>
+          <div class="kachel">
+            <a href="addUser"
+              ><span> <h2>Add new User</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="revokeUser"
+              ><span> <h2>Revoke Access</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="modifyUser"
+              ><span> <h2>Modify access</h2></span></a
+            >
+          </div>
+          <div class="kachel">
+            <a href="allUsers"
+              ><span> <h2>View All users</h2></span></a
+            >
+          </div>
+        </div>
+
+
+        </main>
+      </form>
+    </div>
+  </body>
+</html>

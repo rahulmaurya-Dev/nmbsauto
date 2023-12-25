@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCS Network team</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}"
+    />
+  </head>
+  <body>
+  </div>
+  <div class="wapper2">
+  <header class="top-bar">
+    
+    <a href="{{ url_for('logout') }}"><button class="top-right-button">Log Out</button></a>
+  </header>
+</div>
+    <div class="wrapper">
+      <form action="#">
+        <h1 class="dash_head">Network Automation Dashboard</h1>
+        <p class="loginP">Please select from below options</p>
+
+        <main>
+          <div class="kachel">
+            <a href="underdev"
+              ><span> <h2>DNS Creation</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="ipblockdash"
+              ><span> <h2>IP Blocking in WAF</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="underdev"
+              ><span> <h2>LB Automations</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="admin"
+              ><span> <h2>Admin Dashboard</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="underdev"
+              ><span> <h2>Tasks</h2></span></a
+            >
+          </div>
+        </main>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCS Network team</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addUser.css') }}">
+
+  </head>
+  <body>
+    
+    <div class="top-bar">
+      <ul class="breadcrumb">
+        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="admin">Admin Dashboard</a></li>
+        <li><a href="userManage">User Management</a></li>
+        <li>Revoke User Access</li>
+      </ul>
+      <a href="{{ url_for('logout') }}"><button class="top-right-button">Log Out</button></a>
+    </div>
+  
+  <div class="container">
+    <div class="title">Revoke Access of User</div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+    
+      <form method="post" action="{{ url_for('revokeUser') }}">
+        <div class="add-user">
+          <p>Enter User ID to Revoke access</p>
+          <input class="Idinput" type="text" name="UID" placeholder="Ex: adm_ext908" required>
+  
+        </div>
+        <div class="buttons">
+          <button class="button" type="submit">Revoke Access</button>
+        </div>
+      </form>
+  
+  
+
+   
+  </body>
+</html>

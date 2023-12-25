@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCS Network team</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admindashboard.css') }}"
+    />
+  </head>
+  <body>
+  </div>
+
+
+  <div class="wapper2">
+
+  <header class="top-bar">
+    
+    <a href="{{ url_for('logout') }}"><button class="top-right-button">Log Out</button></a>
+  </header>
+</div>
+    <div class="wrapper">
+      <form action="#">
+        <h1 class="dash_head">Admin Dashboard</h1>
+        <p class="loginP">Please select from below options</p>
+
+        <main>
+          <div class="kachel">
+            <a href="logsDash"
+              ><span> <h2>Log management</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="userManage"
+              ><span> <h2>User management</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="underdev"
+              ><span> <h2>Documentaion and help</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="dashboard"
+              ><span> <h2>User Dashboard</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="underdev"
+              ><span> <h2>tasks</h2></span></a
+            >
+          </div>
+        </main>
+      </form>
+    </div>
+  </body>
+</html>

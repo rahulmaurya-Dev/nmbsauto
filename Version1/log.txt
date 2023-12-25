@@ -1,0 +1,14 @@
+IPs added:
+Added 100.22.33.44/32 in Blacklist of 192.168.0.200
+Added 100.22.33.44/32 in blacklist2 of 192.168.0.200
+
+Invalid IPs:
+192.168.1.1
+10.0.0.1
+185.180.44.1
+
+Already present:
+Skipped 14.0.0.10/32 in Blacklist of 192.168.0.200 (already exists)
+Skipped 14.0.0.10/32 in blacklist2 of 192.168.0.200 (already exists)
+
+IPs added to Excel:

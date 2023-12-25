@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCS Network team</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/ipblocklogs.css') }}"
+    />
+  </head>
+  <body>
+
+    <div class="top-bar">
+      <ul class="breadcrumb">
+        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="admin">Admin Dashboard</a></li>
+        <li>Logs Management</li>
+      </ul>
+      <a href="{{ url_for('logout') }}"><button class="top-right-button">Log Out</button></a>
+    </div>
+    
+    <div class="wrapper">
+        <h1 class="dash_head">IP Blocking Logs</h1>
+        <form action="{{ url_for('ipblocklogs') }}" method="get">
+          <input type="text" name="search" value="{{ search }}" placeholder="Search logs...">
+          <button type="submit">Search</button>
+        </form>
+        <div class="table-responsive">
+          {{ records_html|safe }}
+        </div>
+<!-- ...other HTML code... -->
+
+<div class="pagination">
+    <!-- Link to the first page -->
+    {% if page > 1 %}
+      <a href="{{ url_for('ipblocklogs', page=1, search=search) }}">&laquo; First</a>
+    {% endif %}
+  
+    <!-- Link to the previous page -->
+    {% if page > 1 %}
+      <a href="{{ url_for('ipblocklogs', page=page-1, search=search) }}">‹ Prev</a>
+    {% endif %}
+  
+    <!-- Some pages before current page -->
+    {% for page_num in range(page-2, page) if page_num > 0 %}
+      <a href="{{ url_for('ipblocklogs', page=page_num, search=search) }}">{{ page_num }}</a>
+    {% endfor %}
+  
+    <!-- Current page (not clickable) -->
+    <span class="current">{{ page }}</span>
+  
+    <!-- Some pages after current page -->
+    {% for page_num in range(page+1, page+3) if page_num <= total_pages %}
+      <a href="{{ url_for('ipblocklogs', page=page_num, search=search) }}">{{ page_num }}</a>
+    {% endfor %}
+  
+    <!-- Link to the next page -->
+    {% if page < total_pages %}
+      <a href="{{ url_for('ipblocklogs', page=page+1, search=search) }}">Next ›</a>
+    {% endif %}
+  
+    <!-- Link to the last page -->
+    {% if page < total_pages %}
+      <a href="{{ url_for('ipblocklogs', page=total_pages, search=search) }}">Last &raquo;</a>
+    {% endif %}
+  </div>
+  
+  <!-- ...other HTML code... -->
+  
+          
+      </div>
+  </body>
+</html>

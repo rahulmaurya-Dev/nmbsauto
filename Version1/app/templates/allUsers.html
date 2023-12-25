@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCS Network team</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/addUser.css') }}">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;}
+
+        tr:nth-child(odd) {
+        color: #f2f2f2;}
+    th{
+        color:black
+    }
+  </style>
+</head>
+<body>
+    <div class="top-bar">
+      <ul class="breadcrumb">
+        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="admin">Admin Dashboard</a></li>
+        <li><a href="userManage">User Management</a></li>
+        <li>Add New User</li>
+      </ul>
+      <a href="{{ url_for('logout') }}"><button class="top-right-button">Log Out</button></a>
+    </div>
+
+  <div class="container">
+    <div class="title">All User Details</div>
+    <button onclick="filterUsers('all')" class="button">Show All</button>
+    <button onclick="filterUsers('read')" class="button">Read Access</button>
+    <button onclick="filterUsers('write')" class="button">Write Access</button>
+    
+    <table id="usersTable">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Access Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+          <tr class="userRow" data-access="{{ user[1] }}">
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="2">No users found.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function filterUsers(accessType) {
+      var rows = document.getElementsByClassName('userRow');
+      for (var i = 0; i < rows.length; i++) {
+        var access = rows[i].getAttribute('data-access');
+        if (accessType == 'all' || access == accessType) {
+          rows[i].style.display = '';
+        } else {
+          rows[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

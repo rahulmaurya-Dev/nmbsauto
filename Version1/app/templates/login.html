@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCS Network team</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_main.css') }}">
+
+  </head>
+  <body>
+    <div class="wrapper">
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+      <form
+        action="{{ url_for('login') }}"
+        method="post"
+        autocomplete="off"
+        readonly
+        onfocus="this.removeAttribute('readonly');"
+      >
+        <h2>Login</h2>
+        <p class="loginP">
+          Please enter your ADM ID cedentials below to access the automation
+          portal
+        </p>
+
+        <div class="input-field">
+          <input type="text" name="ADM_ID" required />
+          <label>Enter your ADM ID </label>
+        </div>
+        <div class="input-field">
+          <input type="password" name="password" required />
+          <label>Enter your password</label>
+        </div>
+        <button type="submit">Log In</button>
+
+        
+
+
+        <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %} -->
+    
+      </form>
+      <!-- <a href="{{ url_for('admin') }}" class="admin_but">Admin Login</a> -->
+    </div>
+  </body>
+</html>

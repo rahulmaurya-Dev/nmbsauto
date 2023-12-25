@@ -1,0 +1,124 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: "Palatino", sans-serif;
+}
+body {
+  background: url("/static/images/lowpoly_2.png"), #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper2{
+  position: relative;
+}
+
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: #fff; /* Adjust color as needed */
+}
+
+
+.top-right-button {
+  float: right; /* Aligns the button to the right */
+  padding: 10px 20px; /* Add padding to increase button size, adjust as needed */
+  border: none;
+  border-radius: 5px; /* Rounds the corners of the button */
+  cursor: pointer;
+  background-color: #000000; /* Example button color, change as desired */
+  color: white; /* Button text color */
+  font-size: 1em; /* Adjust the font-size as needed */
+  outline: none; /* Removes the outline to make it look better on focus */
+  position: absolute;
+  top: 3%; /* Adjust the top position as needed */
+  right: 3%; /* Adjust the right position as needed */
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+.top-right-button:hover {
+  background-color: #424242; /* Darker button color on hover for visual feedback */
+}
+
+
+
+
+
+.wrapper {
+  width: 50%;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dash_head {
+  color: #ffffff;
+}
+
+.loginP {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #0c0b0b;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.kachel {
+  background: #aeb1b0;
+  width: 27.3%;
+  border: solid 1px #222;
+  padding: 1rem;
+  transition: all 0.3s ease-in;
+  margin: 3%;
+}
+.kachel:hover {
+  transform: scale(1.1);
+  z-index: 100;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #222;
+}
+.kachel h2 {
+  font-size: 1.3rem;
+}
+.kachel span {
+  font-size: 1.9rem;
+}
+
+
+@media (max-width: 610px) {
+  main {
+    width: 96%;
+  }
+  .kachel {
+    padding: 0.8rem;
+    width: 43%;
+  }
+}
+@media (max-width: 420px) {
+  main {
+    width: 89%;
+  }
+  .kachel {
+    width: 100%;
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCS Network team</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/usermanage.css') }}"
+    />
+  </head>
+  <body>
+
+    <div class="top-bar">
+      <ul class="breadcrumb">
+        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="admin">Admin Dashboard</a></li>
+        <li>Logs Management</li>
+      </ul>
+      <a href="{{ url_for('logout') }}"><button class="top-right-button">Log Out</button></a>
+    </div>
+    
+    <div class="wrapper">
+      <form action="#">
+        <h1 class="dash_head">Logs Management </h1>
+        <p class="loginP">Please seletct what logs you want to see </p>
+
+        <main>
+          <div class="kachel">
+            <a href="ipblock"
+              ><span> <h2>Direct Blocking</h2></span></a
+            >
+          </div>
+
+          <div class="kachel">
+            <a href="iprepblock"
+              ><span> <h2>Blocking by checking Reputaion</h2></span></a
+            >
+          </div>
+
+        </main>
+      </form>
+    </div>
+  </body>
+</html>

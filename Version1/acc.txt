@@ -1,0 +1,3 @@
+admin write
+rahul readtest1 write
+test1 write
